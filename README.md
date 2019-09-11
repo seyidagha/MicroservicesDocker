@@ -1,8 +1,9 @@
 Example application with Microservices architecture, using Kafka, 
 SocketIO, NodeJS, Spring Boot, PostGresql, Docker. Application is ready 
 to run on Docker virtual address 192.168.99.100 and will try to run 
-there if you run "docker-compose up" in the root folder. For running in 
-localhost, changer "application.properties" files of Spring Boot 
+there if you uncompress the rar file "1500000 Sales Records.csv" and run 
+"docker-compose up" in the root folder. For running in 
+localhost, change "application.properties" files of Spring Boot 
 projects to localhost. 
 Logic:
 TaskWebApp is an interface to start and stop process. After pressing 
