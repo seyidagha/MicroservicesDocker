@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  nodejs:
+    build:
+      context: ./src/main/resources/static/js/nodeJS
+      dockerfile: Dockerfile
+    image: nodejs
+    container_name: nodejs
+    ports:
+      - '9097:9097'
+
+      
+      
+  task-web-app:
+    image: task-web-app
+    container_name: task-web-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+     - '9090:9090'
+    depends_on:
+     - postgres
+     
+     
+  postgres:
+    image: postgres
+    container_name: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=consumer
+    expose:
+     - 5432
+    ports:
+     - 5432:5432
+   
+volumes:
+  db-data:                

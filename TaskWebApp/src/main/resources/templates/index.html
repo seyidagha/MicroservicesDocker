@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+	
+
+
+		
+	
+<script type="text/javascript" th:inline="javascript">
+	var urlWeb = [[${urlWeb}]];
+	var urlKafka = [[${urlKafka}]];
+	var urlSocket = [[${urlSocket}]];
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" th:src="@{/js/functions.js}"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<meta charset="ISO-8859-1">
+<title>Web Application</title>
+</head>
+<body>
+
+
+
+<div class="container">
+<h3>Web App</h3>
+<h4 class="myUrl" >App Url: [[${urlWeb}]]  </h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Record Size in DB</th>
+      <td><button class="startProcess" th:attr="onclick=|startProcess()|">Start Process</button></td>
+
+    </tr>
+    <tr>
+      <th scope="row"><input class="period"  ></th>
+      <td><button class="stopProcess" th:attr="onclick=|stopProcess()|">Stop Process</button></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+</body>
+</html>
